@@ -1,0 +1,42 @@
+﻿@{  
+    ViewBag.Title = "Claims";
+}
+
+<table>
+    <tr>
+        <th>
+            Claim Type
+        </th>
+        <th>
+            Claim Value
+        </th>
+        <th>
+            Value Type
+        </th>
+        <th>
+            Subject Name
+        </th>
+        <th>
+            Issuer Name
+        </th>
+    </tr>
+    @foreach(System.Security.Claims.Claim claim in ViewBag.ClaimsIdentity.Claims) {
+        <tr>
+            <th>
+                @claim.Type
+            </th>
+            <th>
+                @claim.Value
+            </th>
+            <th>
+                @claim.ValueType
+            </th>
+            <th>
+                @claim.Subject.Name
+            </th>
+            <th>
+                @claim.Issuer 
+            </th>
+        </tr>
+    }
+</table>
